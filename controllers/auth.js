@@ -68,3 +68,9 @@ res.clearCookie("token");
     message: "User signout successfully"
   });
 };
+
+//protected routes
+exports.isSignedIn = expressJwt({
+  secret: process.env.SECRET,
+  userProperty: "auth"
+});
